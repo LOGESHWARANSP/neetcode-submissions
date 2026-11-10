@@ -1,0 +1,1 @@
+select c.left_operand,c.operator,c.right_operand, case when c.operator = '>' and lv.value > rv.value then 'true'  when c.operator = '<' and lv.value < rv.value then 'true'  when c.operator = '=' and lv.value = rv.value then 'true' else 'false' end as value from expressions c join  variables lv on c.left_operand = lv.name join variables rv on c.right_operand = rv.name;
